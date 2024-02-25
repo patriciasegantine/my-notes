@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
-export const ButtonTextContainer = styled.button`
+export const ButtonTextContainer = styled.button<{ color: string, $active: string }>`
   background: none;
-  color: ${({theme}) => theme.COLORS.HIGHLIGHT};
-
+  padding: 5px;
   border: none;
+
   font-size: ${({theme}) => theme.FONT.PARAGRAPH};
+
+  color: ${({$active, theme, color}) => $active === 'true'
+          ? theme.COLORS.HIGHLIGHT
+          : color};
+
 `

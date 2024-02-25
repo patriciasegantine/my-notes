@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 
 export default createGlobalStyle`
   * {
@@ -33,4 +33,12 @@ export default createGlobalStyle`
   button:hover, a:hover {
     filter: brightness(0.9);
   }
+`
+
+export const SectionContainer = styled.div`
+  width: 550px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
 `
