@@ -1,7 +1,9 @@
+import { Details } from "./details/details.tsx";
+
 export const App = () => {
   return (
     <>
-      Setup
+      <Details/>
     </>
   )
 }
