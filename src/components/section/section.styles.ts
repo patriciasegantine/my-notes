@@ -11,7 +11,7 @@ export const SectionContainer = styled.section`
     margin-bottom: ${({theme}) => theme.SPACING.MEDIUM};
 
     color: ${({theme}) => theme.COLORS.GRAY_100};
-    font-size: ${({theme}) => theme.FONT.LARGE};
+    font-size: ${({theme}) => theme.FONT.MEDIUM};
     font-weight: 400;
   }
 

@@ -32,9 +32,9 @@ export default {
     PARAGRAPH: '16px',
     EXTRA_SMALL: '12px',
     SMALL: '14px',
-    MEDIUM: '18px',
-    LARGE: '20px',
-    GIANT: '24px',
+    MEDIUM: '20px',
+    LARGE: '24px',
+    GIANT: '36px',
     
     LINE_HEIGHT_SMALL: '20px',
     LINE_HEIGHT_MEDIUM: '24px',
