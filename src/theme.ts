@@ -14,6 +14,7 @@ export default {
   },
   
   SPACING: {
+    
     EXTRA_SMALL: '8px',
     SMALL: '16px',
     MEDIUM: '24px',
@@ -23,16 +24,17 @@ export default {
   },
   
   BORDER: {
+    RADIUS_SMALL: '5px',
     RADIUS_REGULAR: '10px'
   },
   
   FONT: {
     PARAGRAPH: '16px',
-    
+    EXTRA_SMALL: '12px',
     SMALL: '14px',
     MEDIUM: '18px',
-    BIG: '24px',
-    GIANT: '34px',
+    LARGE: '20px',
+    GIANT: '24px',
     
     LINE_HEIGHT_SMALL: '20px',
     LINE_HEIGHT_MEDIUM: '24px',
