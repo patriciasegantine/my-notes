@@ -28,7 +28,7 @@ export const InputContainer = styled.div`
   }
 
   svg {
-    margin-right: ${({theme}) => theme.SPACING.SMALL};
+    margin-left: ${({theme}) => theme.SPACING.SMALL};
   }
 
 `

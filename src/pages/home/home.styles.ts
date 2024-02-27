@@ -1,11 +1,8 @@
 import styled, { css } from "styled-components";
-import { ButtonTextContainer } from "../../components/button-text/button-text.styles.ts";
+import { SingInContainer } from "../sign-in/sign-in.styles.ts";
 
-export const HomeContainer = styled.div<{ $mobile: string }>`
+export const HomeContainer = styled(SingInContainer)<{ $mobile: string }>`
   position: relative;
-
-  width: 100%;
-  height: 100vh;
 
   background: ${({theme}) => theme.COLORS.BACKGROUND_800};
 
@@ -59,12 +56,6 @@ export const Brand = styled.div`
   position: relative;
 `
 
-export const ButtonClose = styled(ButtonTextContainer)`
-  position: absolute;
-  right: 10px;
-  top: 10px;
-`
-
 export const Search = styled.div`
   grid-area: search;
   padding: ${({theme}) => theme.SPACING.REGULAR};
@@ -74,8 +65,6 @@ export const Content = styled.div`
   grid-area: content;
   padding: 0 ${({theme}) => theme.SPACING.REGULAR};
   overflow-y: auto;
-
-
 `
 
 export const Button = styled.button`

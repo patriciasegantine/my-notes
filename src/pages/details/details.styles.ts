@@ -1,10 +1,13 @@
 import styled from "styled-components";
-import { SectionContainer } from "../../global.styles.ts";
+import { FullWidthContainer } from "../../global.styles.ts";
 
-export const DetailsContainer = styled(SectionContainer)`
-`
+export const DetailsContainer = styled(FullWidthContainer)``
 
 export const DetailsContent = styled.div`
+
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: ${({theme}) => theme.SPACING.REGULAR};
 
   display: flex;
   flex-direction: column;

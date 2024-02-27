@@ -5,10 +5,14 @@ import { Button } from "../../components/button/button.tsx";
 import { Tags } from "../../components/tags/tags.tsx";
 import { ButtonText } from "../../components/button-text/button-text.tsx";
 import theme from "../../theme.ts";
+import { Header } from "../../components/header/header.tsx";
 
 export const Details: React.FC = () => {
   return (
+    
     <DetailsContainer>
+      
+      <Header/>
       
       <DetailsContent>
         <ButtonText title={'Delete note'} color={theme.COLORS.HIGHLIGHT}/>

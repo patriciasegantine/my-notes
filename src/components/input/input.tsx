@@ -9,8 +9,8 @@ interface InputProps {
 export const Input: React.FC<InputProps> = ({icon: Icon, placeholder}) => {
   return (
     <InputContainer>
-      <input placeholder={placeholder}/>
       {Icon && <Icon size={20}/>}
+      <input placeholder={placeholder}/>
     </InputContainer>
   );
 };

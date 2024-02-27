@@ -52,10 +52,7 @@ export default createGlobalStyle`
   }
 `
 
-export const SectionContainer = styled.div`
-  width: 550px;
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
+export const FullWidthContainer = styled.div`
+  width: 100%;
+  height: 100vh;
 `
