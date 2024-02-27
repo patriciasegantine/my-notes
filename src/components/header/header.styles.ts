@@ -18,7 +18,7 @@ export const HeaderContainer = styled.header`
 export const Profile = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;;
+  justify-content: space-between;
   gap: ${({theme}) => theme.SPACING.EXTRA_SMALL};
 `
 

@@ -27,7 +27,7 @@ export const HomeContainer = styled.div<{ $mobile: string }>`
   }
 `
 
-export const Menu = styled.div<{ $mobile_size: string, $show_mobile: string }>`
+export const Menu = styled.div<{ $mobile_size: string }>`
 
   grid-area: menu;
   background: ${({theme}) => theme.COLORS.BACKGROUND_900};
@@ -40,15 +40,6 @@ export const Menu = styled.div<{ $mobile_size: string, $show_mobile: string }>`
     "brand"
     "nav"
     "newNote";
-
-  ${(props) => props.$show_mobile === 'true' && css`
-    position: absolute;
-    display: grid;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 300px;
-  `}
 `
 
 export const Brand = styled.div`
@@ -82,19 +73,22 @@ export const Search = styled.div`
 export const Content = styled.div`
   grid-area: content;
   padding: 0 ${({theme}) => theme.SPACING.REGULAR};
-  overflow-y: scroll;
+  overflow-y: auto;
+
+
 `
 
-export const Button = styled.div`
+export const Button = styled.button`
   grid-area: newNote;
   background: ${({theme}) => theme.COLORS.HIGHLIGHT};
+  color: ${({theme}) => theme.COLORS.BACKGROUND_800};
 
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5px;
 
-  button {
-    color: ${({theme}) => theme.COLORS.BACKGROUND_900};
-    font-weight: 500;
-  }
+  font-weight: 500;
+
+  border: none;
 `

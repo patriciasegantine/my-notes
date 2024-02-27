@@ -11,7 +11,7 @@ export const AppContainer = styled.div`
 
   main {
     grid-area: content;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-top: ${({theme}) => theme.SPACING.GIANT};
   }
 

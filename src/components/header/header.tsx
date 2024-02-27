@@ -11,12 +11,12 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({onClick, isMobileSizer}) => {
   return (
     <HeaderContainer>
-      <MenuMobile onClick={onClick}>
-        {
-          isMobileSizer &&
+      {
+        isMobileSizer &&
+        <MenuMobile onClick={onClick}>
           <FiMenu size={20}/>
-        }
-      </MenuMobile>
+        </MenuMobile>
+      }
       
       <Profile>
         <ImageContainer>

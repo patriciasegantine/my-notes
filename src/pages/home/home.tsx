@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Brand, Button, ButtonClose, Content, HomeContainer, Menu, Search } from "./home.styles.ts";
 import { Header } from "../../components/header/header.tsx";
-import { ButtonText } from "../../components/button-text/button-text.tsx";
 import theme from "../../theme.ts";
 import { Input } from "../../components/input/input.tsx";
 import { Section } from "../../components/section/section.tsx";
@@ -58,7 +57,6 @@ export const Home: React.FC = () => {
       
       <Menu
         $mobile_size={isMobileSizer.toString()}
-        $show_mobile={showMenuMobile.toString()}
       >
         <Brand>
           <h1>My Notes</h1>
@@ -72,7 +70,6 @@ export const Home: React.FC = () => {
               <AiFillCloseCircle/>
             </ButtonClose>
           }
-        
         </Brand>
         
         <Nav
@@ -81,10 +78,8 @@ export const Home: React.FC = () => {
         />
         
         <Button>
-          <ButtonText
-            icon={FiPlus}
-            title={`Create Note`}
-            color={theme.COLORS.BACKGROUND_900}/>
+          <FiPlus size={20}/>
+          <span>New note</span>
         </Button>
       </Menu>
       
@@ -98,6 +93,7 @@ export const Home: React.FC = () => {
       <Content>
         <Section title={'My notes'}>
           <Notes data={myNotes}/>
+        
         </Section>
       </Content>
     

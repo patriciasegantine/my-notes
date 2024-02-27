@@ -31,7 +31,24 @@ export default createGlobalStyle`
   }
 
   button:hover, a:hover {
-    filter: brightness(0.9);
+    filter: brightness(0.7);
+  }
+
+  // scroll
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    border-radius: ${({theme}) => theme.BORDER.RADIUS_REGULAR};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({theme}) => theme.COLORS.GRAY_300};
+    border-radius: ${({theme}) => theme.BORDER.RADIUS_REGULAR};
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: ${({theme}) => theme.COLORS.GRAY_100};
+    border-radius: ${({theme}) => theme.BORDER.RADIUS_REGULAR};
   }
 `
 

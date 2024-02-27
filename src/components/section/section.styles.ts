@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SectionContainer = styled.section`
-  margin-top: ${({theme}) => theme.SPACING.REGULAR};
+  margin-top: ${({theme}) => theme.SPACING.SMALL};
   margin-bottom: ${({theme}) => theme.SPACING.REGULAR};
 
   h2 {
