@@ -43,7 +43,7 @@ export default {
   
   LAYOUT: {
     MOBILE: '400px',
-    TABLET: '700px',
+    TABLET: '768px',
     LAPTOP: '1200px',
     DESKTOP: '1408px',
   }

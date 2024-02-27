@@ -1,10 +1,23 @@
 import React from 'react';
-import { HeaderContainer, ImageContainer, Logout, Profile, ProfileContent } from "./header.styles.ts";
+import { HeaderContainer, ImageContainer, Logout, MenuMobile, Profile, ProfileContent } from "./header.styles.ts";
 import { RiShutDownLine } from "react-icons/ri";
+import { FiMenu } from "react-icons/fi";
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  isMobileSizer: boolean
+  onClick: () => void
+}
+
+export const Header: React.FC<HeaderProps> = ({onClick, isMobileSizer}) => {
   return (
     <HeaderContainer>
+      <MenuMobile onClick={onClick}>
+        {
+          isMobileSizer &&
+          <FiMenu size={20}/>
+        }
+      </MenuMobile>
+      
       <Profile>
         <ImageContainer>
           <img

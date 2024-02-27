@@ -12,20 +12,21 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 ${({theme}) => theme.SPACING.GIANT};
+  padding: 0 ${({theme}) => theme.SPACING.REGULAR};
 `
 
 export const Profile = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;;
   gap: ${({theme}) => theme.SPACING.EXTRA_SMALL};
 `
 
 export const ImageContainer = styled.div`
 
   img {
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
     border-radius: 50px;
   }
 `
@@ -35,12 +36,12 @@ export const ProfileContent = styled.div`
   line-height: ${({theme}) => theme.FONT.LINE_HEIGHT_SMALL};
 
   span {
-    font-size: ${({theme}) => theme.FONT.SMALL};
+    font-size: ${({theme}) => theme.FONT.EXTRA_SMALL};
     color: ${({theme}) => theme.COLORS.GRAY_100};
   }
 
   strong {
-    font-size: ${({theme}) => theme.FONT.MEDIUM};
+    font-size: ${({theme}) => theme.FONT.PARAGRAPH};
     color: ${({theme}) => theme.COLORS.WHITE};
   }
 `
@@ -50,7 +51,10 @@ export const Logout = styled.button`
   border: none;
 
   svg {
-    font-size: ${({theme}) => theme.FONT.LARGE};
+    font-size: ${({theme}) => theme.FONT.MEDIUM};
     color: ${({theme}) => theme.COLORS.GRAY_100};
   }
+`
+export const MenuMobile = styled(Logout)`
+
 `
