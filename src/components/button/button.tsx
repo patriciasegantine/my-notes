@@ -5,9 +5,24 @@ interface ButtonProps {
   title: string
   loading?: boolean
   onClick: () => void
+  icon: any
 }
 
-export const Button: React.FC<ButtonProps> = ({title, onClick, loading = false}) => {
+export const Button: React.FC<ButtonProps> = ({title, onClick, loading = false, icon: Icon}) => {
+  
+  const loadingButton = (
+    <ButtonContent>
+      <LoadingIcon/>
+      <span>Loading...</span>
+    </ButtonContent>
+  )
+  
+  const regularButton = (
+    <ButtonContent>
+      <Icon size={15}/>
+      <span>{title}</span>
+    </ButtonContent>
+  )
   
   return (
     <ContainerButton
@@ -15,16 +30,13 @@ export const Button: React.FC<ButtonProps> = ({title, onClick, loading = false})
       disabled={loading}
       onClick={onClick}
     >
-      {
-        loading
-          ? (
-            <ButtonContent>
-              <LoadingIcon/>
-              <span>Loading...</span>
-            </ButtonContent>
-          )
-          : title
-      }
+      <ButtonContent>
+        {
+          loading
+            ? loadingButton
+            : regularButton
+        }
+      </ButtonContent>
     </ContainerButton>
   );
 };
