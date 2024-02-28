@@ -5,7 +5,7 @@ interface ButtonProps {
   title: string
   loading?: boolean
   onClick: () => void
-  icon: any
+  icon?: any
 }
 
 export const Button: React.FC<ButtonProps> = ({title, onClick, loading = false, icon: Icon}) => {
@@ -19,7 +19,7 @@ export const Button: React.FC<ButtonProps> = ({title, onClick, loading = false, 
   
   const regularButton = (
     <ButtonContent>
-      <Icon size={15}/>
+      {Icon && <Icon size={15}/>}
       <span>{title}</span>
     </ButtonContent>
   )

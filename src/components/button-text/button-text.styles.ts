@@ -7,6 +7,7 @@ export const ButtonTextContainer = styled.button<{ color?: string, $active?: str
 
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5px;
 
   font-size: ${({theme}) => theme.FONT.PARAGRAPH};

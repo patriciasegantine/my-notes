@@ -1,21 +1,34 @@
 import React from 'react';
-import { DetailsContainer, DetailsContent, Links, TagsSection } from "./details.styles.ts";
+import { ButtonContainer, DetailsContainer, DetailsContent, Links, TagsSection } from "./details.styles.ts";
 import { Section } from "../../components/section/section.tsx";
 import { Button } from "../../components/button/button.tsx";
 import { Tags } from "../../components/tags/tags.tsx";
 import { ButtonText } from "../../components/button-text/button-text.tsx";
 import theme from "../../theme.ts";
 import { Header } from "../../components/header/header.tsx";
+import { FiChevronLeft } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import { RouterEnum } from "../../router/router.enum.ts";
 
 export const Details: React.FC = () => {
+  
+  const navigate = useNavigate()
+  
+  const handleGoBackToHome = () => {
+    navigate(RouterEnum.home)
+  }
+  
   return (
     
     <DetailsContainer>
       
       <Header/>
       
+      
       <DetailsContent>
-        <ButtonText title={'Delete note'} color={theme.COLORS.HIGHLIGHT}/>
+        <ButtonContainer>
+          <ButtonText title={'Delete note'} color={theme.COLORS.HIGHLIGHT} onClick={() => alert('delete')}/>
+        </ButtonContainer>
         
         <h1>React for Beginner</h1>
         
@@ -49,7 +62,8 @@ export const Details: React.FC = () => {
         
         <Button
           title={'Back'}
-          onClick={() => alert('clicked')}
+          onClick={handleGoBackToHome}
+          icon={FiChevronLeft}
         />
       </DetailsContent>
     

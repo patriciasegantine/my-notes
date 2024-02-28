@@ -8,6 +8,7 @@ interface ButtonLinkProps {
   active?: boolean
   onClick?: () => void
   icon?: any
+  size?: number
 }
 
 export const ButtonText: React.FC<ButtonLinkProps> = (
@@ -16,7 +17,8 @@ export const ButtonText: React.FC<ButtonLinkProps> = (
     color = theme.COLORS.GRAY_100,
     active = false,
     onClick,
-    icon: Icon
+    icon: Icon,
+    size = 20
   }) => {
   return (
     <ButtonTextContainer
@@ -25,8 +27,8 @@ export const ButtonText: React.FC<ButtonLinkProps> = (
       $active={active.toString()}
       onClick={onClick}
     >
-      {Icon && <Icon size={20}/>}
-      <p>{title}</p>
+      {Icon && <Icon size={size}/>}
+      <span>{title}</span>
     </ButtonTextContainer>
   );
 };

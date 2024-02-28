@@ -3,18 +3,20 @@ import { FullWidthContainer } from "../../global.styles.ts";
 
 export const DetailsContainer = styled(FullWidthContainer)``
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`
+
 export const DetailsContent = styled.div`
 
   max-width: 600px;
   margin: 0 auto;
-  padding-top: ${({theme}) => theme.SPACING.REGULAR};
+  padding-top: ${({theme}) => theme.SPACING.GIANT};
 
   display: flex;
   flex-direction: column;
 
-  button:first-child {
-    align-self: end;
-  }
 
   h1 {
     font-weight: 500;

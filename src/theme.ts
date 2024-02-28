@@ -21,6 +21,7 @@ export default {
     REGULAR: '32PX',
     LARGE: '56PX',
     GIANT: '64PX',
+    EXTRA_GIANT: '76PX',
   },
   
   BORDER: {
@@ -35,6 +36,7 @@ export default {
     MEDIUM: '20px',
     LARGE: '24px',
     GIANT: '36px',
+    EXTRA_GIANT: '48px',
     
     LINE_HEIGHT_SMALL: '20px',
     LINE_HEIGHT_MEDIUM: '24px',
