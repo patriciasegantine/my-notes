@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { SingInContainer } from "../sign-in/sign-in.styles.ts";
 
-export const HomeContainer = styled(SingInContainer)<{ $mobile: string }>`
+export const HomeContainer = styled(SingInContainer)<{ $mobile_size: string }>`
   position: relative;
 
   background: ${({theme}) => theme.COLORS.BACKGROUND_800};
@@ -14,7 +14,7 @@ export const HomeContainer = styled(SingInContainer)<{ $mobile: string }>`
     "menu search"
     "menu content";
 
-  ${(props) => props.$mobile === 'true' && css`
+  ${(props) => props.$mobile_size === 'true' && css`
     grid-auto-columns: auto;
     grid-template-areas:
     "header"

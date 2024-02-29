@@ -27,7 +27,11 @@ export const Details: React.FC = () => {
       
       <DetailsContent>
         <ButtonContainer>
-          <ButtonText title={'Delete note'} color={theme.COLORS.HIGHLIGHT} onClick={() => alert('delete')}/>
+          <ButtonText
+            title={'Delete note'}
+            color={theme.COLORS.HIGHLIGHT}
+            onClick={() => alert('delete')}
+          />
         </ButtonContainer>
         
         <h1>React for Beginner</h1>

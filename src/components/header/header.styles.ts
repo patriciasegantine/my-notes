@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import User from '../../assets/user.svg'
 
 export const HeaderContainer = styled.header`
   grid-area: header;
@@ -20,14 +21,23 @@ export const Profile = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: ${({theme}) => theme.SPACING.EXTRA_SMALL};
+
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(.8);
+  }
 `
 
 export const ImageContainer = styled.div`
+  background: url(${User}) no-repeat center center;
+  width: 50px;
+  height: 50px;
 
   img {
-    width: 50px;
-    height: 50px;
+    width: 100%;
     border-radius: 50px;
+    object-fit: cover;
   }
 `
 export const ProfileContent = styled.div`

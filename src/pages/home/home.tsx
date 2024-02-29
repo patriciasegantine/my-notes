@@ -7,10 +7,33 @@ import { FiPlus, FiSearch } from "react-icons/fi";
 import { Notes } from "../../components/notes/notes.tsx";
 import { Nav } from "../../components/nav/nav.tsx";
 import { useGlobalContext } from "../../context/global-context.tsx";
+import { useNavigate } from "react-router-dom";
+import { RouterEnum } from "../../router/router.enum.ts";
+
+const myNotes = [
+  {
+    id: 1,
+    title: 'Module one',
+    tags: [
+      {id: 1, name: 'Components'},
+      {id: 2, name: 'Styled component'}
+    ]
+  },
+  {
+    id: 2,
+    title: 'Module one',
+    tags: [
+      {id: 1, name: 'Teste'},
+      {id: 2, name: 'Styled component'}
+    ]
+  }
+]
 
 export type FilterType = 'all' | 'node' | 'react'
 
 export const Home: React.FC = () => {
+  const navigate = useNavigate()
+  
   const {isMobileSizer} = useGlobalContext();
   const [activeFilter, setActiveFilter] = useState<FilterType>('all')
   
@@ -18,27 +41,13 @@ export const Home: React.FC = () => {
     setActiveFilter(type)
   }
   
-  const myNotes = [
-    {
-      id: 1,
-      title: 'Module one',
-      tags: [
-        {id: 1, name: 'Components'},
-        {id: 2, name: 'Styled component'}
-      ]
-    },
-    {
-      id: 2,
-      title: 'Module one',
-      tags: [
-        {id: 1, name: 'Teste'},
-        {id: 2, name: 'Styled component'}
-      ]
-    }
-  ]
+  const handleGoToDetailsNote = (id: number | string) => {
+    const newId = id.toString()
+    navigate(`${RouterEnum.details.replace(':id', newId)}`)
+  }
   
   return (
-    <HomeContainer $mobile={isMobileSizer.toString()}>
+    <HomeContainer $mobile_size={isMobileSizer.toString()}>
       <Header/>
       
       <Menu $mobile_size={isMobileSizer.toString()}>
@@ -61,6 +70,7 @@ export const Home: React.FC = () => {
         <Input
           placeholder="Search by title..."
           icon={FiSearch}
+          type={'text'}
         />
       </Search>
       
@@ -68,8 +78,13 @@ export const Home: React.FC = () => {
         <Section title={'My notes'}>
           
           {
-            myNotes && myNotes.map(note => (
-              <Notes key={note.id} data={note}/>
+            myNotes && myNotes.map(({title, tags, id}) => (
+              <Notes
+                key={id}
+                title={title}
+                tags={tags}
+                onClick={() => handleGoToDetailsNote(id)}
+              />
             ))
           }
         
