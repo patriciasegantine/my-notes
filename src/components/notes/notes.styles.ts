@@ -10,6 +10,12 @@ export const NotesContainer = styled.div`
   padding: ${({theme}) => theme.SPACING.MEDIUM};
   margin-bottom: ${({theme}) => theme.SPACING.SMALL};
 
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(.9);
+  }
+
 
   h1 {
     flex: 1;

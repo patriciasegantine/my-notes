@@ -3,26 +3,25 @@ import { NotesContainer } from "./notes.styles.ts";
 import { Tags } from "../tags/tags.tsx";
 
 interface NotesProps {
-  data: {
-    title: string
-    tags: {
-      id: number
-      name: string
-    }[]
-  }
+  onClick: () => void
+  title: string
+  tags: {
+    id: number
+    name: string
+  }[]
   
 }
 
-export const Notes: React.FC<NotesProps> = ({data}) => {
+export const Notes: React.FC<NotesProps> = ({title, tags, onClick}) => {
   return (
-    <NotesContainer>
-      <h1>{data?.title}</h1>
+    <NotesContainer onClick={onClick}>
+      <h1>{title}</h1>
       {
-        data?.tags &&
+        tags &&
         <footer>
           {
-            data.tags.map(tag => (
-              <Tags key={tag.id} title={tag.name}/>)
+            tags.map(({id, name}) => (
+              <Tags key={id} title={name}/>)
             )
           }
         </footer>
