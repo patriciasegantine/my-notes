@@ -14,8 +14,20 @@ export const ProfileHeader = styled.header`
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 ${({theme}) => theme.SPACING.REGULAR};
   margin-bottom: ${({theme}) => theme.SPACING.EXTRA_GIANT};
+`
+
+export const ProfileBrand = styled.button`
+
+
+  color: ${({theme}) => theme.COLORS.HIGHLIGHT};
+  font-family: "Kodchasan", sans-serif;
+  font-size: ${({theme}) => theme.FONT.LARGE};
+
+  border: none;
+  background: none;
 `
 
 export const ProfileContent = styled.div`

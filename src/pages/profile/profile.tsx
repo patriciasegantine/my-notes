@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Form,
+  ProfileBrand,
   ProfileContainer,
   ProfileContent,
   ProfileHeader,
@@ -26,11 +27,14 @@ export const Profile: React.FC = () => {
     <ProfileContainer>
       <ProfileHeader>
         <ButtonText
-          title={'Back'}
+          title={'back'}
           onClick={handleGoToHome}
           icon={FiArrowLeft}
         />
-      
+        
+        <ProfileBrand onClick={handleGoToHome}>
+          My Notes
+        </ProfileBrand>
       </ProfileHeader>
       
       <ProfileContent>
