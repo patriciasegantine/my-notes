@@ -43,6 +43,8 @@ export const ImageContainer = styled.div`
 export const ProfileContent = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
   line-height: ${({theme}) => theme.FONT.LINE_HEIGHT_SMALL};
 
   span {
@@ -65,6 +67,12 @@ export const Logout = styled.button`
     color: ${({theme}) => theme.COLORS.GRAY_100};
   }
 `
-export const MenuMobile = styled(Logout)`
+export const MenuMobile = styled(Logout)``
 
+export const HeaderFlexContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: ${({theme}) => theme.SPACING.REGULAR};
 `
