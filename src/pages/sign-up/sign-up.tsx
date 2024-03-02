@@ -3,18 +3,11 @@ import { Background, Form, SignInLink, SingUpContainer, SingUpContent } from "./
 import { Input } from "../../components/input/input.tsx";
 import { FiArrowUpRight, FiLock, FiLogIn, FiMail, FiUser } from "react-icons/fi";
 import { Button } from "../../components/button/button.tsx";
-import { ButtonText } from "../../components/button-text/button-text.tsx";
 import { useGlobalContext } from "../../context/global-context.tsx";
-import { RouterEnum } from "../../router/router.enum.ts";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { RoutesEnum } from "../../routes/routes.enum.ts";
 
 export const SignUp: React.FC = () => {
-  
-  const navigate = useNavigate()
-  
-  const handleGoBackToSignIn = () => {
-    navigate(RouterEnum.signIn)
-  }
   
   const {isMobileSizer} = useGlobalContext();
   
@@ -44,12 +37,11 @@ export const SignUp: React.FC = () => {
         
         <SignInLink>
           Have an account?
-          <ButtonText
-            title={'Sign in'}
-            icon={FiArrowUpRight}
-            size={15}
-            onClick={handleGoBackToSignIn}
-          />
+          
+          <Link to={RoutesEnum.signIn}>
+            <FiArrowUpRight/>
+            Sign in
+          </Link>
         </SignInLink>
       
       </SingUpContent>

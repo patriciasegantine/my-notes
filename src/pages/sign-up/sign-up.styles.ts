@@ -54,8 +54,11 @@ export const SignInLink = styled.div`
   display: flex;
   flex-direction: column;
 
-  span {
-    font-size: ${({theme}) => theme.FONT.SMALL};;
+  a {
+    font-size: ${({theme}) => theme.FONT.SMALL};
+    color: ${({theme}) => theme.COLORS.GRAY_100};
+    text-align: center;
+    margin-top: ${({theme}) => theme.SPACING.EXTRA_SMALL}
   }
 `
 export const Background = styled.div<{ $mobile_size: string }>`

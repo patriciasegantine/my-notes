@@ -61,9 +61,13 @@ export const SignUpLink = styled.div`
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
-  span {
-    font-size: ${({theme}) => theme.FONT.SMALL};;
+  a {
+    font-size: ${({theme}) => theme.FONT.SMALL};
+    color: ${({theme}) => theme.COLORS.GRAY_100};
+    text-align: center;
+    margin-top: ${({theme}) => theme.SPACING.EXTRA_SMALL}
   }
 `
 export const Background = styled.div<{ $mobile_size: string }>`
@@ -73,7 +77,7 @@ export const Background = styled.div<{ $mobile_size: string }>`
   background-size: cover;
   filter: brightness(0.5);
 
-  ${(props) => props.$mobile_size === 'true' && css`
+  ${({$mobile_size}) => $mobile_size === 'true' && css`
     display: none;
   `
   }

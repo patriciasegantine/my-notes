@@ -5,17 +5,12 @@ import { FiArrowUpRight, FiLogIn, FiMail } from "react-icons/fi";
 import { Button } from "../../components/button/button.tsx";
 import { ButtonText } from "../../components/button-text/button-text.tsx";
 import { useGlobalContext } from "../../context/global-context.tsx";
-import { useNavigate } from "react-router-dom";
-import { RouterEnum } from "../../router/router.enum.ts";
+import { Link } from "react-router-dom";
+import { RoutesEnum } from "../../routes/routes.enum.ts";
 
 export const SignIn: React.FC = () => {
   
   const {isMobileSizer} = useGlobalContext();
-  const navigate = useNavigate()
-  
-  const handleGoBackToSignUp = () => {
-    navigate(RouterEnum.signUp)
-  }
   
   return (
     <SingInContainer>
@@ -44,12 +39,11 @@ export const SignIn: React.FC = () => {
         
         <SignUpLink>
           Don't have an account?
-          <ButtonText
-            title={'Sign up'}
-            icon={FiArrowUpRight}
-            size={15}
-            onClick={handleGoBackToSignUp}
-          />
+          
+          <Link to={RoutesEnum.signUp}>
+            <FiArrowUpRight/>
+            Sign up
+          </Link>
         </SignUpLink>
       
       </SingInContent>
