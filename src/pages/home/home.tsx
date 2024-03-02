@@ -8,7 +8,7 @@ import { Notes } from "../../components/notes/notes.tsx";
 import { Nav } from "../../components/nav/nav.tsx";
 import { useGlobalContext } from "../../context/global-context.tsx";
 import { useNavigate } from "react-router-dom";
-import { RouterEnum } from "../../router/router.enum.ts";
+import { RoutesEnum } from "../../routes/routes.enum.ts";
 
 const myNotes = [
   {
@@ -43,11 +43,11 @@ export const Home: React.FC = () => {
   
   const handleGoToDetailsNote = (id: number | string) => {
     const newId = id.toString()
-    navigate(`${RouterEnum.details.replace(':id', newId)}`)
+    navigate(`${RoutesEnum.details.replace(':id', newId)}`)
   }
   
   const handleGoToNewNote = () => {
-    navigate(RouterEnum.newNote)
+    navigate(RoutesEnum.newNote)
     setCreateOrEditNote('create')
   };
   

@@ -31,13 +31,14 @@ export const ProfileBrand = styled.button`
 `
 
 export const ProfileContent = styled.div`
-  margin: -150px auto;
+
+  max-width: 600px;
+  margin: -150px auto 0;
 `
 
 export const Form = styled.form`
 
-  max-width: 450px;
-  margin: 0 auto;
+
 
   div:nth-child(3) {
     margin-top: ${({theme}) => theme.SPACING.REGULAR};

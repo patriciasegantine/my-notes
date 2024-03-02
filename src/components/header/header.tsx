@@ -12,8 +12,8 @@ import { RiShutDownLine } from "react-icons/ri";
 import { FiMenu } from "react-icons/fi";
 import { useGlobalContext } from "../../context/global-context.tsx";
 import { useNavigate } from "react-router-dom";
-import { RouterEnum } from "../../router/router.enum.ts";
 import { Brand } from "../brand/brand.tsx";
+import { RoutesEnum } from "../../routes/routes.enum.ts";
 
 interface HeaderProps {
   brand?: boolean
@@ -26,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({brand = true}) => {
   const navigate = useNavigate()
   
   const handleGoToProfile = () => {
-    navigate(RouterEnum.profile)
+    navigate(RoutesEnum.profile)
   }
   
   const handleOnShowMenuMobile = () => {

@@ -7,10 +7,10 @@ import { ButtonText } from "../../components/button-text/button-text.tsx";
 import { Header } from "../../components/header/header.tsx";
 import { FiArrowLeft, FiPenTool, FiTrash } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-import { RouterEnum } from "../../router/router.enum.ts";
 import { BackButtonContainer } from "../../global.styles.ts";
 import theme from "../../theme.ts";
 import { useGlobalContext } from "../../context/global-context.tsx";
+import { RoutesEnum } from "../../routes/routes.enum.ts";
 
 export const Details: React.FC = () => {
   
@@ -18,11 +18,11 @@ export const Details: React.FC = () => {
   const {setCreateOrEditNote} = useGlobalContext();
   
   const handleGoBackToHome = () => {
-    navigate(RouterEnum.home)
+    navigate(RoutesEnum.home)
   }
   
   const handleOnEditNote = () => {
-    navigate(RouterEnum.newNote)
+    navigate(RoutesEnum.newNote)
     setCreateOrEditNote('edit')
   }
   

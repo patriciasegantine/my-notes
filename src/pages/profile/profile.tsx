@@ -10,17 +10,17 @@ import {
 } from "./profile.styles.ts";
 import { ButtonText } from "../../components/button-text/button-text.tsx";
 import { FiArrowLeft, FiCamera, FiLock, FiMail, FiUser } from "react-icons/fi";
-import { RouterEnum } from "../../router/router.enum.ts";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../components/input/input.tsx";
 import { Button } from "../../components/button/button.tsx";
+import { RoutesEnum } from "../../routes/routes.enum.ts";
 
 export const Profile: React.FC = () => {
   
   const navigate = useNavigate()
   
   const handleGoToHome = () => {
-    navigate(RouterEnum.home)
+    navigate(RoutesEnum.home)
   }
   
   return (

@@ -1,14 +1,14 @@
 import React from 'react';
 import { ProfileBrand } from "../../pages/profile/profile.styles.ts";
-import { RouterEnum } from "../../router/router.enum.ts";
 import { useNavigate } from "react-router-dom";
+import { RoutesEnum } from "../../routes/routes.enum.ts";
 
 export const Brand: React.FC = () => {
   
   const navigate = useNavigate()
   
   const handleGoToHome = () => {
-    navigate(RouterEnum.home)
+    navigate(RoutesEnum.home)
   }
   
   return (

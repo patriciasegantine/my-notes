@@ -2,8 +2,8 @@ import { GlobalProvider } from "./context/global-context.tsx";
 import { ThemeProvider } from "styled-components";
 import theme from "./theme.ts";
 import GlobalStyle from "./global.styles.ts";
-import { Router } from "./router/router.tsx";
 import { BrowserRouter } from "react-router-dom";
+import { AuthRoutes } from "./routes/auth.routes.tsx";
 
 export const App = () => {
   
@@ -12,7 +12,7 @@ export const App = () => {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <GlobalStyle/>
-          <Router/>
+          <AuthRoutes/>
         </BrowserRouter>
       </ThemeProvider>
     </GlobalProvider>
