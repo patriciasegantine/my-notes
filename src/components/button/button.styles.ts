@@ -10,10 +10,10 @@ const spinAnimation = keyframes`
   }
 `
 
-export const ContainerButton = styled.button`
+export const ContainerButton = styled.button<{ color: string, background: string }>`
   width: 100%;
-  background-color: ${({theme}) => theme.COLORS.HIGHLIGHT};
-  color: ${({theme}) => theme.COLORS.BACKGROUND_800};
+  background-color: ${({background}) => background};
+  color: ${({color}) => color};
 
   height: 56px;
   border: 0;

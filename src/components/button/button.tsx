@@ -1,14 +1,25 @@
 import React from 'react';
 import { ButtonContent, ContainerButton, LoadingIcon } from "./button.styles.ts";
+import theme from "../../theme.ts";
 
 interface ButtonProps {
   title: string
   loading?: boolean
   onClick: () => void
   icon?: any
+  color?: string
+  background?: string
 }
 
-export const Button: React.FC<ButtonProps> = ({title, onClick, loading = false, icon: Icon}) => {
+export const Button: React.FC<ButtonProps> = (
+  {
+    title,
+    onClick,
+    icon: Icon,
+    loading = false,
+    color = theme.COLORS.BACKGROUND_800,
+    background = theme.COLORS.HIGHLIGHT
+  }) => {
   
   const loadingButton = (
     <ButtonContent>
@@ -26,6 +37,8 @@ export const Button: React.FC<ButtonProps> = ({title, onClick, loading = false, 
   
   return (
     <ContainerButton
+      background={background}
+      color={color}
       type="button"
       disabled={loading}
       onClick={onClick}
