@@ -56,3 +56,8 @@ export const FullWidthContainer = styled.div`
   width: 100%;
   height: 100vh;
 `
+
+export const BackButtonContainer = styled.div`
+  margin-left: ${({theme}) => theme.SPACING.REGULAR};
+  margin-top: ${({theme}) => theme.SPACING.REGULAR};
+`

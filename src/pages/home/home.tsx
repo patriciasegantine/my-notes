@@ -34,7 +34,7 @@ export type FilterType = 'all' | 'node' | 'react'
 export const Home: React.FC = () => {
   const navigate = useNavigate()
   
-  const {isMobileSizer} = useGlobalContext();
+  const {isMobileSizer, setCreateOrEditNote} = useGlobalContext();
   const [activeFilter, setActiveFilter] = useState<FilterType>('all')
   
   const onChangeActiveFilter = (type: FilterType) => {
@@ -46,9 +46,14 @@ export const Home: React.FC = () => {
     navigate(`${RouterEnum.details.replace(':id', newId)}`)
   }
   
+  const handleGoToNewNote = () => {
+    navigate(RouterEnum.newNote)
+    setCreateOrEditNote('create')
+  };
+  
   return (
     <HomeContainer $mobile_size={isMobileSizer.toString()}>
-      <Header/>
+      <Header brand={false}/>
       
       <Menu $mobile_size={isMobileSizer.toString()}>
         <Brand>
@@ -60,7 +65,7 @@ export const Home: React.FC = () => {
           onChangeActiveFilter={onChangeActiveFilter}
         />
         
-        <Button>
+        <Button onClick={handleGoToNewNote}>
           <FiPlus size={20}/>
           <span>New note</span>
         </Button>

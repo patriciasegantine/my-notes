@@ -28,7 +28,9 @@ export const Menu = styled.div<{ $mobile_size: string }>`
 
   grid-area: menu;
   background: ${({theme}) => theme.COLORS.BACKGROUND_900};
-  display: ${({$mobile_size}) => $mobile_size === 'true' ? 'none' : 'grid'};
+  display: ${({$mobile_size}) => $mobile_size === 'true'
+          ? 'none'
+          : 'grid'};
   grid-auto-columns: auto;
   grid-template-rows: 105px auto 60px;
   position: initial;

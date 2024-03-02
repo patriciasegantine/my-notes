@@ -10,13 +10,20 @@ import { useNavigate } from "react-router-dom";
 import { RouterEnum } from "../../router/router.enum.ts";
 import { BackButtonContainer } from "../../global.styles.ts";
 import theme from "../../theme.ts";
+import { useGlobalContext } from "../../context/global-context.tsx";
 
 export const Details: React.FC = () => {
   
   const navigate = useNavigate()
+  const {setCreateOrEditNote} = useGlobalContext();
   
   const handleGoBackToHome = () => {
     navigate(RouterEnum.home)
+  }
+  
+  const handleOnEditNote = () => {
+    navigate(RouterEnum.newNote)
+    setCreateOrEditNote('edit')
   }
   
   return (
@@ -66,7 +73,7 @@ export const Details: React.FC = () => {
         <DetailContainerButton>
           <Button
             title={'Edit'}
-            onClick={() => alert('edit')}
+            onClick={handleOnEditNote}
             icon={FiPenTool}
             color={theme.COLORS.GRAY_100}
             background={theme.COLORS.BACKGROUND_900}

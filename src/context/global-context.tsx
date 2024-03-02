@@ -1,10 +1,14 @@
 import React, { createContext, ReactNode, useContext, useEffect, useState } from "react";
 
+type ModalType = 'create' | 'edit'
+
 interface GlobalContextType {
   showMenuMobile: boolean
   setShowMenuShowMenuMobile: React.Dispatch<boolean>
   isMobileSizer: boolean
   setIsMobileSizer: React.Dispatch<boolean>
+  createOrEditNote: ModalType
+  setCreateOrEditNote: React.Dispatch<ModalType>
 }
 
 const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
@@ -12,6 +16,7 @@ const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
 export const GlobalProvider: React.FC<{ children: ReactNode }> = ({children}) => {
   const [showMenuMobile, setShowMenuShowMenuMobile] = useState<boolean>(false)
   const [isMobileSizer, setIsMobileSizer] = useState<boolean>(false)
+  const [createOrEditNote, setCreateOrEditNote] = useState<ModalType>('create')
   
   useEffect(() => {
     const handleResize = () => {
@@ -35,7 +40,10 @@ export const GlobalProvider: React.FC<{ children: ReactNode }> = ({children}) =>
         setShowMenuShowMenuMobile,
         
         isMobileSizer,
-        setIsMobileSizer
+        setIsMobileSizer,
+        
+        createOrEditNote,
+        setCreateOrEditNote
         
       }}>
       {children}

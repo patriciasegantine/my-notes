@@ -7,9 +7,17 @@ interface NoteItemProps {
   value: string
   onClick: () => void
   placeholder: string
+  onChange: () => void
 }
 
-export const NoteItem: React.FC<NoteItemProps> = ({isNew, value, onClick, placeholder}) => {
+export const NoteItem: React.FC<NoteItemProps> = (
+  {
+    isNew,
+    value,
+    onClick,
+    placeholder,
+    onChange
+  }) => {
   return (
     <NoteItemContainer $is_new={isNew.toString()}>
       <input
@@ -17,6 +25,7 @@ export const NoteItem: React.FC<NoteItemProps> = ({isNew, value, onClick, placeh
         value={value}
         readOnly={!isNew}
         placeholder={placeholder}
+        onChange={onChange}
       />
       
       <button
