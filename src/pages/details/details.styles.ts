@@ -3,11 +3,6 @@ import { FullWidthContainer } from "../../global.styles.ts";
 
 export const DetailsContainer = styled(FullWidthContainer)``
 
-export const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`
-
 export const DetailsContent = styled.div`
 
   max-width: 600px;
@@ -46,4 +41,9 @@ export const Links = styled.ul`
   a {
     color: ${({theme}) => theme.COLORS.WHITE};
   }
+`
+
+export const DetailContainerButton = styled.div`
+  display: flex;
+  gap: ${({theme}) => theme.SPACING.SMALL};
 `

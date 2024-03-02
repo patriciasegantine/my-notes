@@ -1,14 +1,15 @@
 import React from 'react';
-import { ButtonContainer, DetailsContainer, DetailsContent, Links, TagsSection } from "./details.styles.ts";
+import { DetailContainerButton, DetailsContainer, DetailsContent, Links, TagsSection } from "./details.styles.ts";
 import { Section } from "../../components/section/section.tsx";
 import { Button } from "../../components/button/button.tsx";
 import { Tags } from "../../components/tags/tags.tsx";
 import { ButtonText } from "../../components/button-text/button-text.tsx";
-import theme from "../../theme.ts";
 import { Header } from "../../components/header/header.tsx";
-import { FiChevronLeft } from "react-icons/fi";
+import { FiArrowLeft, FiPenTool, FiTrash } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { RouterEnum } from "../../router/router.enum.ts";
+import { BackButtonContainer } from "../../global.styles.ts";
+import theme from "../../theme.ts";
 
 export const Details: React.FC = () => {
   
@@ -21,18 +22,16 @@ export const Details: React.FC = () => {
   return (
     
     <DetailsContainer>
-      
       <Header/>
       
+      <BackButtonContainer>
+        <ButtonText
+          title={'back'}
+          onClick={handleGoBackToHome}
+          icon={FiArrowLeft}/>
+      </BackButtonContainer>
       
       <DetailsContent>
-        <ButtonContainer>
-          <ButtonText
-            title={'Delete note'}
-            color={theme.COLORS.HIGHLIGHT}
-            onClick={() => alert('delete')}
-          />
-        </ButtonContainer>
         
         <h1>React for Beginner</h1>
         
@@ -64,11 +63,25 @@ export const Details: React.FC = () => {
           </Section>
         </TagsSection>
         
-        <Button
-          title={'Back'}
-          onClick={handleGoBackToHome}
-          icon={FiChevronLeft}
-        />
+        <DetailContainerButton>
+          <Button
+            title={'Edit'}
+            onClick={() => alert('edit')}
+            icon={FiPenTool}
+            color={theme.COLORS.GRAY_100}
+            background={theme.COLORS.BACKGROUND_900}
+          />
+          
+          <Button
+            title={'Delete'}
+            onClick={() => alert('delete')}
+            icon={FiTrash}
+            color={theme.COLORS.GRAY_100}
+            background={theme.COLORS.BACKGROUND_900}
+          />
+        </DetailContainerButton>
+      
+      
       </DetailsContent>
     
     </DetailsContainer>
