@@ -37,8 +37,8 @@ export const Button: React.FC<ButtonProps> = (
   
   return (
     <ContainerButton
-      background={background}
-      color={color}
+      $background={background}
+      $color={color}
       type="button"
       disabled={loading}
       onClick={onClick}
