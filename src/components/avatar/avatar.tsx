@@ -2,7 +2,7 @@ import React from 'react';
 import { Profile, ProfileContent } from "../header/header.styles.ts";
 import { useNavigate } from "react-router-dom";
 import { RoutesEnum } from "../../routes/routes.enum.ts";
-import { Avatar } from '@mui/material';
+import Avatar from '@mui/material/Avatar';
 
 const user = {
   name: "Patricia Segantine",

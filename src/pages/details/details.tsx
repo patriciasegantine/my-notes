@@ -10,13 +10,11 @@ import theme from "../../theme.ts";
 import { useGlobalContext } from "../../context/global-context.tsx";
 import { RoutesEnum } from "../../routes/routes.enum.ts";
 import { BackButtonContainer } from "../../global.styles.ts";
-import { ConfirmationDialog } from "../../components/confirmation-logout/confirmation-dialog.tsx";
 
 export const Details: React.FC = () => {
   
   const navigate = useNavigate()
   const {setCreateOrEditNote} = useGlobalContext();
-  const [open, setOpen] = React.useState<boolean>(false);
   
   const handleGoBackToHome = () => {
     navigate(RoutesEnum.home)
@@ -28,8 +26,7 @@ export const Details: React.FC = () => {
   }
   
   const handleOnDelete = () => {
-    setOpen(false)
-    console.log('DELETE')
+    alert('DELETE')
   }
   
   return (
@@ -87,26 +84,13 @@ export const Details: React.FC = () => {
           
           <Button
             title={'Delete'}
-            onClick={() => setOpen(true)}
+            onClick={handleOnDelete}
             icon={FiTrash}
             color={theme.COLORS.GRAY_100}
             background={theme.COLORS.BACKGROUND_900}
           />
         </DetailContainerButton>
-      
-      
       </DetailsContent>
-      
-      <ConfirmationDialog
-        description={'Deseja deletar?'}
-        title={'delete'}
-        onOK={handleOnDelete}
-        onCancel={() => setOpen(false)}
-        okText={'Delete'}
-        open={open}
-        setOpen={setOpen}
-      />
-    
     </DetailsContainer>
   
   );
