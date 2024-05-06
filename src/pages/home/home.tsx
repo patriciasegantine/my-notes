@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
-import { Brand, Button, Content, HomeContainer, Menu, Search } from "./home.styles.ts";
-import { Header } from "../../components/header/header.tsx";
+import React from 'react';
+import { Content, HomeContainer, Search } from "./home.styles.ts";
 import { Input } from "../../components/input/input.tsx";
 import { Section } from "../../components/section/section.tsx";
-import { FiPlus, FiSearch } from "react-icons/fi";
+import { FiSearch } from "react-icons/fi";
 import { Notes } from "../../components/notes/notes.tsx";
-import { Nav } from "../../components/nav/nav.tsx";
-import { useGlobalContext } from "../../context/global-context.tsx";
 import { useNavigate } from "react-router-dom";
 import { RoutesEnum } from "../../routes/routes.enum.ts";
 
@@ -26,6 +23,22 @@ const myNotes = [
       {id: 1, name: 'Teste'},
       {id: 2, name: 'Styled component'}
     ]
+  },
+  {
+    id: 3,
+    title: 'Module one',
+    tags: [
+      {id: 1, name: 'Components'},
+      {id: 2, name: 'Styled component'}
+    ]
+  },
+  {
+    id: 4,
+    title: 'Module one',
+    tags: [
+      {id: 1, name: 'Teste'},
+      {id: 2, name: 'Styled component'}
+    ]
   }
 ]
 
@@ -34,42 +47,13 @@ export type FilterType = 'all' | 'node' | 'react'
 export const Home: React.FC = () => {
   const navigate = useNavigate()
   
-  const {isMobileSizer, setCreateOrEditNote} = useGlobalContext();
-  const [activeFilter, setActiveFilter] = useState<FilterType>('all')
-  
-  const onChangeActiveFilter = (type: FilterType) => {
-    setActiveFilter(type)
-  }
-  
   const handleGoToDetailsNote = (id: number | string) => {
     const newId = id.toString()
     navigate(`${RoutesEnum.details.replace(':id', newId)}`)
   }
   
-  const handleGoToNewNote = () => {
-    navigate(RoutesEnum.newNote)
-    setCreateOrEditNote('create')
-  };
-  
   return (
-    <HomeContainer $mobile_size={isMobileSizer.toString()}>
-      <Header brand={false}/>
-      
-      <Menu $mobile_size={isMobileSizer.toString()}>
-        <Brand>
-          <h1>My Notes</h1>
-        </Brand>
-        
-        <Nav
-          activeFilter={activeFilter}
-          onChangeActiveFilter={onChangeActiveFilter}
-        />
-        
-        <Button onClick={handleGoToNewNote}>
-          <FiPlus size={20}/>
-          <span>New note</span>
-        </Button>
-      </Menu>
+    <HomeContainer>
       
       <Search>
         <Input
@@ -92,11 +76,8 @@ export const Home: React.FC = () => {
               />
             ))
           }
-        
         </Section>
       </Content>
-    
-    
     </HomeContainer>
   );
 };

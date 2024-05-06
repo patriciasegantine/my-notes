@@ -4,18 +4,19 @@ import { Section } from "../../components/section/section.tsx";
 import { Button } from "../../components/button/button.tsx";
 import { Tags } from "../../components/tags/tags.tsx";
 import { ButtonText } from "../../components/button-text/button-text.tsx";
-import { Header } from "../../components/header/header.tsx";
 import { FiArrowLeft, FiPenTool, FiTrash } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-import { BackButtonContainer } from "../../global.styles.ts";
 import theme from "../../theme.ts";
 import { useGlobalContext } from "../../context/global-context.tsx";
 import { RoutesEnum } from "../../routes/routes.enum.ts";
+import { BackButtonContainer } from "../../global.styles.ts";
+import { ConfirmationDialog } from "../../components/confirmation-logout/confirmation-dialog.tsx";
 
 export const Details: React.FC = () => {
   
   const navigate = useNavigate()
   const {setCreateOrEditNote} = useGlobalContext();
+  const [open, setOpen] = React.useState<boolean>(false);
   
   const handleGoBackToHome = () => {
     navigate(RoutesEnum.home)
@@ -26,19 +27,24 @@ export const Details: React.FC = () => {
     setCreateOrEditNote('edit')
   }
   
+  const handleOnDelete = () => {
+    setOpen(false)
+    console.log('DELETE')
+  }
+  
   return (
     
     <DetailsContainer>
-      <Header/>
-      
-      <BackButtonContainer>
-        <ButtonText
-          title={'back'}
-          onClick={handleGoBackToHome}
-          icon={FiArrowLeft}/>
-      </BackButtonContainer>
       
       <DetailsContent>
+        
+        <BackButtonContainer>
+          <ButtonText
+            title={'back'}
+            onClick={handleGoBackToHome}
+            icon={FiArrowLeft}
+          />
+        </BackButtonContainer>
         
         <h1>React for Beginner</h1>
         
@@ -81,7 +87,7 @@ export const Details: React.FC = () => {
           
           <Button
             title={'Delete'}
-            onClick={() => alert('delete')}
+            onClick={() => setOpen(true)}
             icon={FiTrash}
             color={theme.COLORS.GRAY_100}
             background={theme.COLORS.BACKGROUND_900}
@@ -90,6 +96,16 @@ export const Details: React.FC = () => {
       
       
       </DetailsContent>
+      
+      <ConfirmationDialog
+        description={'Deseja deletar?'}
+        title={'delete'}
+        onOK={handleOnDelete}
+        onCancel={() => setOpen(false)}
+        okText={'Delete'}
+        open={open}
+        setOpen={setOpen}
+      />
     
     </DetailsContainer>
   

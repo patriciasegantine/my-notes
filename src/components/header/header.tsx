@@ -1,40 +1,23 @@
 import React from 'react';
-import {
-  HeaderContainer,
-  HeaderFlexContainer,
-  ImageContainer,
-  Logout,
-  MenuMobile,
-  Profile,
-  ProfileContent
-} from "./header.styles.ts";
-import { RiShutDownLine } from "react-icons/ri";
+import { HeaderContainer, HeaderFlexContainer, MenuMobile } from "./header.styles.ts";
 import { FiMenu } from "react-icons/fi";
 import { useGlobalContext } from "../../context/global-context.tsx";
-import { useNavigate } from "react-router-dom";
-import { Brand } from "../brand/brand.tsx";
-import { RoutesEnum } from "../../routes/routes.enum.ts";
+import { AvatarComponent } from "../avatar/avatar.tsx";
 
 interface HeaderProps {
-  brand?: boolean
+
 }
 
-export const Header: React.FC<HeaderProps> = ({brand = true}) => {
+export const Header: React.FC<HeaderProps> = () => {
   
   const {isMobileSizer, showMenuMobile, setShowMenuShowMenuMobile} = useGlobalContext();
-  
-  const navigate = useNavigate()
-  
-  const handleGoToProfile = () => {
-    navigate(RoutesEnum.profile)
-  }
   
   const handleOnShowMenuMobile = () => {
     setShowMenuShowMenuMobile(!showMenuMobile)
   }
   
   return (
-    <HeaderContainer>
+    <HeaderContainer $mobile_size={isMobileSizer.toString()}>
       {
         isMobileSizer &&
         <MenuMobile onClick={handleOnShowMenuMobile}>
@@ -42,32 +25,12 @@ export const Header: React.FC<HeaderProps> = ({brand = true}) => {
         </MenuMobile>
       }
       
-      <div>
-        {
-          brand && <Brand/>
-        }
-      </div>
-      
-      
       <HeaderFlexContainer>
-        <Profile onClick={handleGoToProfile}>
-          
-          <ProfileContent>
-            <span>Welcome</span>
-            <strong>Patricia Segantine</strong>
-          </ProfileContent>
-          
-          <ImageContainer>
-            <img
-              src="https://github.com/patriciasegantine.png"
-              alt="user photo profile"
-            />
-          </ImageContainer>
-        </Profile>
+        <AvatarComponent/>
         
-        <Logout>
-          <RiShutDownLine/>
-        </Logout>
+        {/*<Logout>*/}
+        {/*  <RiShutDownLine/>*/}
+        {/*</Logout>*/}
       </HeaderFlexContainer>
     
     

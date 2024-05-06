@@ -1,19 +1,12 @@
 import React from 'react';
-import {
-  Form,
-  ProfileBrand,
-  ProfileContainer,
-  ProfileContent,
-  ProfileHeader,
-  UserAvatarIcon,
-  UserAvatarProfile
-} from "./profile.styles.ts";
-import { ButtonText } from "../../components/button-text/button-text.tsx";
+import { Form, ProfileContainer, ProfileContent, UserAvatarIcon, UserAvatarProfile } from "./profile.styles.ts";
 import { FiArrowLeft, FiCamera, FiLock, FiMail, FiUser } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../components/input/input.tsx";
 import { Button } from "../../components/button/button.tsx";
 import { RoutesEnum } from "../../routes/routes.enum.ts";
+import { ButtonText } from "../../components/button-text/button-text.tsx";
+import { BackButtonContainer } from "../../global.styles.ts";
 
 export const Profile: React.FC = () => {
   
@@ -25,19 +18,15 @@ export const Profile: React.FC = () => {
   
   return (
     <ProfileContainer>
-      <ProfileHeader>
-        <ButtonText
-          title={'back'}
-          onClick={handleGoToHome}
-          icon={FiArrowLeft}
-        />
-        
-        <ProfileBrand onClick={handleGoToHome}>
-          My Notes
-        </ProfileBrand>
-      </ProfileHeader>
-      
       <ProfileContent>
+        <BackButtonContainer>
+          <ButtonText
+            title={'back'}
+            onClick={handleGoToHome}
+            icon={FiArrowLeft}
+          />
+        </BackButtonContainer>
+        
         <UserAvatarProfile>
           <img
             src="https://github.com/patriciasegantine.png"
@@ -62,9 +51,7 @@ export const Profile: React.FC = () => {
             loading={false}
           />
         </Form>
-      
       </ProfileContent>
-    
     
     </ProfileContainer>
   );

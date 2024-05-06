@@ -1,9 +1,15 @@
 import React from 'react';
-import { ProfileBrand } from "../../pages/profile/profile.styles.ts";
 import { useNavigate } from "react-router-dom";
 import { RoutesEnum } from "../../routes/routes.enum.ts";
+import { BrandContent } from "./brand.styles.ts";
 
-export const Brand: React.FC = () => {
+export type TBrand = 'small' | 'medium' | 'large'
+
+export interface IBrand {
+  size: TBrand
+}
+
+export const Brand: React.FC<IBrand> = ({size}) => {
   
   const navigate = useNavigate()
   
@@ -12,8 +18,8 @@ export const Brand: React.FC = () => {
   }
   
   return (
-    <ProfileBrand onClick={handleGoToHome}>
+    <BrandContent onClick={handleGoToHome} size={size}>
       My Notes
-    </ProfileBrand>
+    </BrandContent>
   );
 };

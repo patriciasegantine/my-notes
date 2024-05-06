@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { Form, NewNoteContainer, NewNoteContent, NewNoteTitles, TagsSection } from "./new-note.styles.ts";
-import { Header } from "../../components/header/header.tsx";
 import { Input } from "../../components/input/input.tsx";
 import { Section } from "../../components/section/section.tsx";
-import { ButtonText } from "../../components/button-text/button-text.tsx";
 import { FiArrowLeft, FiSave } from "react-icons/fi";
-import { BackButtonContainer } from "../../global.styles.ts";
 import { Button } from "../../components/button/button.tsx";
 import { useNavigate } from "react-router-dom";
-import { RouterEnum } from "../../router/router.enum.ts";
 import { TextArea } from "../../components/text-area/text-area.tsx";
 import { NoteItem } from "../../components/note-item/note-item.tsx";
 import { useGlobalContext } from "../../context/global-context.tsx";
+import { RoutesEnum } from "../../routes/routes.enum.ts";
+import { BackButtonContainer } from "../../global.styles.ts";
+import { ButtonText } from "../../components/button-text/button-text.tsx";
 
 export const NewNote: React.FC = () => {
   
@@ -21,7 +20,7 @@ export const NewNote: React.FC = () => {
   const [noteData, setNoteData] = useState<string>('http://localhost:3000')
   
   const handleGoBackToHome = () => {
-    navigate(RouterEnum.home)
+    navigate(RoutesEnum.home)
   }
   
   const handleOnSaveNewNote = () => {
@@ -33,16 +32,15 @@ export const NewNote: React.FC = () => {
   }
   return (
     <NewNoteContainer>
-      <Header/>
-      
-      <BackButtonContainer>
-        <ButtonText
-          title={'back'}
-          onClick={handleGoBackToHome}
-          icon={FiArrowLeft}/>
-      </BackButtonContainer>
       
       <NewNoteContent>
+        
+        <BackButtonContainer>
+          <ButtonText
+            title={'back'}
+            onClick={handleGoBackToHome}
+            icon={FiArrowLeft}/>
+        </BackButtonContainer>
         
         <Form id={'newNote'}>
           <NewNoteTitles>

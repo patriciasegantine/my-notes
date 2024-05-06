@@ -22,10 +22,13 @@ export const GlobalProvider: React.FC<{ children: ReactNode }> = ({children}) =>
     const handleResize = () => {
       if (window.innerWidth > 768) {
         setIsMobileSizer(false)
+        setShowMenuShowMenuMobile(false)
       } else {
         setIsMobileSizer(true)
       }
     };
+    
+    handleResize()
     
     window.addEventListener('resize', handleResize);
     
