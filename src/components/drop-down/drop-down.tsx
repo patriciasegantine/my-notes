@@ -9,7 +9,7 @@ interface IDropDown {
   selectedValue?: string
 }
 
-export const DropDown: React.FC<IDropDown> = ({open, onClose, selectedValue}) => {
+export const DropDown: React.FC<IDropDown> = ({open, onClose}) => {
   
   const handleListItemClick = (value: string) => {
     onClose(value);
