@@ -2,7 +2,7 @@ import React from 'react';
 import { Profile, ProfileContent } from "../header/header.styles.ts";
 import { useNavigate } from "react-router-dom";
 import { RoutesEnum } from "../../routes/routes.enum.ts";
-import Avatar from '@mui/material/Avatar';
+// import * as Avatar from '@mui/material/Avatar';
 
 const user = {
   name: "Patricia Segantine",
@@ -26,14 +26,14 @@ export const AvatarComponent: React.FC = () => {
         <strong>{user.name}</strong>
       </ProfileContent>
       
-      <Avatar
-        alt={user.name}
-        src={
-          user.url
-            ? user.url
-            : "/static/images/avatar/1.jpg"
-        }
-      />
+      {/*<Avatar*/}
+      {/*  alt={user.name}*/}
+      {/*  src={*/}
+      {/*    user.url*/}
+      {/*      ? user.url*/}
+      {/*      : "/static/images/avatar/1.jpg"*/}
+      {/*  }*/}
+      {/*/>*/}
     </Profile>
   );
 };
